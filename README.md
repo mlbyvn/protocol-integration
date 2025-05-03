@@ -20,6 +20,8 @@ This project highlights minimalized protocol integration contracts that facilita
 
 * **[Adding liquidity](src/liquidity/)**
     * Allows user to add liquidity to [Balancer](https://balancer.fi) protocol directly or through [Aura](https://aura.finance)
+* **[Flash loans](src/flash-loans/)**
+    * Open and close leveraged positions with [Aave](https://aave.com) flash loans
 * **[Getting asset price](src/price-pools/)**
     * Get the rETH/ETH exchange rate using [RocketPool]() of [Chainlink Price Feeds](https://docs.chain.link/data-feeds/price-feeds)
     * Using Chainlink price feeds in a complex protocol: **[Decentralized Stable Coin](https://github.com/mlbyvn/DSC)**
@@ -34,7 +36,10 @@ This project highlights minimalized protocol integration contracts that facilita
 ## Project Structure
 ```
 src
+├── aave                                  # Aave helper contracts
 ├── interfaces                            # Interfaces for protocols and tokens
+├── flash-loans      
+│   └── AaveLeverage.sol                  # Leveraging with Aave flash loans
 ├── liquidity
 │   ├── AuraLiquidity.sol                 # Provide liquidity in Aura
 │   └── BalancerLiquidity.sol             # Provide liquidity in Balancer
