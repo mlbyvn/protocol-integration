@@ -11,13 +11,21 @@ import {GelatoVRFConsumerBase} from "../../lib/vrf-contracts/contracts/GelatoVRF
  */
 contract GelatoVRF is GelatoVRFConsumerBase {
 
+
+    error GelatoVRF__NotAlowedToRequest();
+
     /**
      * @dev Make a request to Gelato VRF
      * @param data The data parameter allows for additional data to be passed to
      * the VRF, which is then forwarded to the callback. This is useful for
      * request tracking purposes if requestId is not enough.
+     * @notice If implementing this external function, address check is needed
+     * as the function spends funds. Alternative: just call internal version
      */
     function requestRandomness(bytes memory data) external {
+        if (msg.sender != address(0xdeadbeef)) {
+            revert GelatoVRF__NotAlowedToRequest();
+        }
         uint256 requestId = _requestRandomness(data);
     }
 

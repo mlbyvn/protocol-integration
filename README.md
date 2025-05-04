@@ -29,6 +29,9 @@ This project highlights minimalized protocol integration contracts that facilita
     * Provides functionality to stake and delegate staking on [EigenLayer](https://www.eigenlayer.xyz)
 * **[Swapping](src/swapping/)**
     * Swap rETH using [Balancer](https://balancer.fi), [RocketPool](https://rocketpool.net) or [Uniswap V3](https://blog.uniswap.org/uniswap-v3)
+* **[VRF](src/vrf)**
+    * Request and handle randomness from [Gelato VRF](https://docs.gelato.network/web3-services/vrf/quick-start)
+    * Using [Chainlink VRF](https://docs.chain.link/vrf) in a complex protocol: **[F3BlackJack](https://github.com/mlbyvn/blackjack)**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -51,6 +54,8 @@ src
 │   ├── BalancerV2Swap.sol                # Swap on Balancer
 │   ├── RocketPoolSwap.sol                # Swap on RocketPool
 │   └── UniswapV3Swap.sol                 # Swap on Uniswap v3
+├── vrf      
+│   └── GelatoVrfMinimal                  # Request randomness from Gelato VRF
 ├── Util.sol                              # Utils
 └──README.md                              # Project documentation
 ```
